@@ -1,0 +1,42 @@
+*Problem Contextualization*
+
+Each Item has two attributes;
+-Utility Score (0-10) Higher More Useful
+-Weight in lbs >0
+
+Carrying Weight Limit:
+-500lbs
+
+Items Input from .txt file (400)
+-One Item Per line
+-First Item Utility Score
+-Second Item weight in LBS
+
+Must Use Simulated Annealing
+-there are libraries for this
+-minimize the difference between total utility score in some arbitrary number (1000)
+-change can be a random selection (can experiment with this) 
+-Start with a very large initial temp
+-Reduce temp every 4000 successful changes or 40,000- attemps 
+-End conditions 4000 changes with no improvement or 40,000 attempts with no improvment ********Whats the difference between attempts and changes? 
+
+
+Selection Indicator
+-vector of booleans
+-Intialize by selected 1/20 of items randomly
+
+Account for Weight
+-(-20 Utlity score for every lbs over 500)
+
+Produce Report
+-Number of Items Packed
+-Totaly Utility
+-Total Weight
+
+
+
+************ Questions ******************
+
+
+
+
