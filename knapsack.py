@@ -5,21 +5,24 @@ class KnapSack:
     """A simple example class"""
     def __init__(self, itemList ):
         self.itemList = itemList
-        self.utility = 1000
+        self.utility = 0
         self.totalWeight = 0
 
         return None
 
     #creates the first 1/20 selection of items
     def initial_randomize(self):
-        item_count = self.itemList.size()/20
+        item_count = len(self.itemList)/20
         for list in self.itemList:
-            if random() > 0.5:
+            if random.random() > 0.5:
                 list[2] = 1
             if item_count == 1:
                 break
             else:
                 item_count -= 1
+        self.calculateUtility()
+        self.calculateWeight()
+        self.penalize()
 
 
 
@@ -27,26 +30,40 @@ class KnapSack:
 
     #Selects a random item and changes its memebership value [2]
     def rearrange(self):
-        temp_index = random.randrange(self.itemList.size)
+        temp_index = random.randrange(len(self.itemList))
         if self.itemList[temp_index][2] == 0:
             self.itemList[temp_index][2] = 1
+            self.calculateUtility()
+            self.calculateWeight()
+            self.penalize()
+
         else:
             self.itemList[temp_index][2] = 0
-
+            self.calculateUtility()
+            self.calculateWeight()
+            self.penalize()
         return None
 
 
 
     def calculateWeight(self):
+        temp_weight = 0
         for list in self.itemList:
             if list[2] == 1:
-                self.totalWeight += list[1]
-        return self.totalWeight
+                temp_weight += list[1]
+
+        self.totalWeight = temp_weight
+
+        return None
 
     def calculateUtility(self):
-        totalUtility = 0
+        temp_utility = 0
         for list in self.itemList:
-            totalUtility -= list[0]
+            if list[2] == 1:
+                temp_utility -= list[0]
+
+        self.utility = 1000 + temp_utility
+
         return None
 
     def penalize(self):

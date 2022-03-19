@@ -4,7 +4,7 @@ import math
 
 
 def get_newKnapsack(oldItemList):
-    new_knapsack_arrangement = knapsack(oldItemList)
+    new_knapsack_arrangement = knapsack.KnapSack(oldItemList)
     new_knapsack_arrangement.rearrange()
 
     return new_knapsack_arrangement
