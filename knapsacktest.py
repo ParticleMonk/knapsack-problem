@@ -23,8 +23,10 @@ test_knapsack.rearrange()
 
 print(test_knapsack.utility)
 
+test_knapsack.anneal(90, .6, 0.01)
 
-
+print(test_knapsack.utility)
+print(test_knapsack.totalWeight)
 print('knapsack created')
 
 exit()
