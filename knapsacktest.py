@@ -1,4 +1,4 @@
-import knapsack
+import knapSack
 
 
 file = open("Program2Input.txt", "r")

@@ -1,10 +1,10 @@
-import knapsack
+import knapSack
 import random
 import math
 
 #Defines the function for generating the "next" knapsack
 def get_newKnapsack(oldItemList):
-    new_knapsack_arrangement = knapsack.KnapSack(oldItemList)
+    new_knapsack_arrangement = knapSack.KnapSack(oldItemList)
     new_knapsack_arrangement.rearrange()
     return new_knapsack_arrangement
 
