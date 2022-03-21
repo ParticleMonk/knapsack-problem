@@ -58,7 +58,6 @@ class KnapSack:
         for item in self.itemList:
             if item[2] == 1:
                 temp_utility += item[0]
-        self.calculateWeight()
         if self.totalWeight > 500:
             temp_utility -= (self.totalWeight - 500) * 20
 
@@ -66,11 +65,6 @@ class KnapSack:
 
         return None
 
-    def weight(self):
-        return self.totalWeight
-
-    def utility(self):
-        return self.utility
 
     # performs the annealing funtion from the anneal file
     def anneal(self, initialTemp=90, finalTemp=0.6, alpha=0.01):
